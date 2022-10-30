@@ -1,0 +1,63 @@
+@import "_functions";
+
+$_fix-scroll: false;
+$_grid-fixed: true;
+$_fs: 14px;
+$variables: (
+  container: 1210px,
+  edge-padding: 15px,
+  font-size: (
+    base: $_fs, // body
+    h1: relative-unit(80px),
+    h2: relative-unit(28px),
+    h3: relative-unit(26px),
+    h4: relative-unit(25px),
+    h5: relative-unit(20px),
+    h6: relative-unit(18px),
+    h1_mobile: relative-unit(40px),
+    h2_mobile: relative-unit(22px),
+    h3_mobile: relative-unit(22px),
+    h4_mobile: relative-unit(22px),
+    h5_mobile: relative-unit(16px),
+    h6_mobile: relative-unit(12px),
+  ),
+  space: (
+    xxl: relative-unit(45px),
+    xl:  relative-unit(40px),
+    lg:  relative-unit(30px),
+    md:  relative-unit(25px),
+    sm:  relative-unit(50px),
+    xs:  relative-unit(40px),
+    micro-xxl: relative-unit(30px),
+    micro-xl: 25px,
+    micro-lg: 20px,
+    micro-md: 15px,
+    micro-sm: 10px,
+    micro-xs: 5px,
+  ),
+  // gap: (
+  //   sections: relative-font(140px),
+  //   blocks: relative-font(100px),
+  // ),
+  breakpoint: (
+    xs:  320px,
+  	sm:  576px,
+  	md:  768px,
+    // 500
+    // 600
+  	lg:  992px,
+  	xl:  1200px,
+  	xxl: 1400px,
+  ),
+  color: (
+    black: #000,
+    white: #FFF,
+    primary: #F1BD45,
+    primary_light: #FFF3D8,
+    link: #5375B7,
+    price_old: #A9A9A9,
+    caption: #8B8B8B,
+    border: #DEDEDE,
+    amount_inline: #ABABAB,
+  ),
+);

@@ -1,0 +1,43 @@
+@import "_normalize";
+@import "_preset";
+
+.italic {
+  font-style: italic;
+}
+
+.slick-active { // temp
+  //background-color: red;
+
+  &:first-child {
+    background: linear-gradient(269.76deg, #FFFFFF 62.83%, rgba(255, 255, 255, 0) 145.7%);
+  }
+
+  &:last-child {
+    background: linear-gradient(269.76deg, #FFFFFF 62.83%, rgba(255, 255, 255, 0) 145.7%);
+  }
+}
+
+
+.slick-active:last-of-type {
+  background-color: red;
+  //background: linear-gradient(269.76deg, #FFFFFF 62.83%, rgba(255, 255, 255, 0) 145.7%);
+}
+
+.slick-slide {
+  padding-left:20px;
+  //background-color: red;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #B9B9B9;
+    left: -1px;
+  }
+
+  &:not(:first-child) {
+    //border-left: 1px solid #B9B9B9;
+  }
+}

@@ -1,0 +1,92 @@
+.icon_logo {
+  font-size: 109px;
+  --width: 1em;
+  width: var(--width);
+  --height: 0.27523em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: #303030;
+}
+
+.icon_arrow {
+  font-size: 15px;
+  --width: 1em;
+  width: var(--width);
+  --height: 0.93333em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: #388AF3;
+  --stroke-1: #388AF3;
+}
+
+.icon_send {
+  font-size: 57px;
+  --width: 1em;
+  width: var(--width);
+  --height: 0.75439em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: white;
+  --fill-3: #96C9E4;
+  --fill-4: #CFE1EF;
+  --fill-5: url(#paint0_linear_2_162);
+}
+.icon_file {
+  font-size: 9px;
+  --width: 1em;
+  width: var(--width);
+  --height: 1em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: white;
+  }
+
+.icon_telegram {
+  font-size: 34px;
+  --width: 1em;
+  width: var(--width);
+  --height: 1em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: #388AF3;
+  --fill-3: white;
+  }
+
+.icon_whatsup {
+  font-size: 34px;
+  --width: 1em;
+  width: var(--width);
+  --height: 1em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: #7BE495;
+  --fill-3: white;
+  }
+
+.icon_search-settings {
+}
+
+.icon_search {
+}
+
+.icon_cross {
+  font-size: 10px;
+  --width: 1em;
+  width: var(--width);
+  --height: 1em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: #989898;
+  }
+
+.icon_search-query {
+  font-size: 17px;
+  --width: 1em;
+  width: var(--width);
+  --height: 1em;
+  height: var(--height);
+  --fill-1: none;
+  --fill-2: black;
+  --fill-3: white;
+  }
+

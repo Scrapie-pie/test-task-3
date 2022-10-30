@@ -1,0 +1,117 @@
+//@import "main";
+@import "_mixins";
+
+//@include setup-font('./assets/fonts', 'Gilroy', ('woff', 'ttf', 'eot'));
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700');
+//Roboto
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  // Сделать в css переменные
+  @include css-variables;
+}
+
+html {
+  $min_width: 280px;
+  $max_width: get-var(container);
+  $min_font: 14px;
+  $max_font:  get-var(font-size, base);
+
+  box-sizing: border-box !important;
+  @include to-responsive(font-size, $min_font, $max_font, $min_width, $max_width);
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &:first-child {
+    // margin-top: 0;
+  }
+
+  & + p {
+    margin-top: 1.1em;
+  }
+}
+
+
+
+// .view {
+// 	display: flex;
+// 	flex-direction: column;
+// 	min-height: 100vh;
+
+// 	header {
+// 		flex-shrink: 0;
+// 	}
+
+// 	main {
+// 		flex-grow: 1;
+// 	}
+
+// 	footer {
+// 		flex-shrink: 0;
+// 	}
+// }
+
+
+
+// .container,
+// *[class$="--container"],
+// *[class$="__container"] {
+//   @include container;
+// }
+
+@for $i from 1 through 6 {
+  $color: get-var(color, black);
+  $weight: 700;
+
+
+  $line-height: 1.22em;
+  //$margin-bottom: get-var(space, xs);
+
+
+
+  h#{$i}, .h#{$i} {
+
+    @if ($i == 5) {
+      //$color: #343434;
+      //$weight: 400;
+      //max-width: 540px;
+      //$line-height: 30px;
+    } @else if ($i == 4) {
+      //$weight: 300;
+    }
+
+    @include h($i, $color, $weight: $weight, $margin-bottom: 0);
+    line-height: $line-height;
+  }
+
+  // .font_size_#{$i} {
+  //   @include h($i, $margin-bottom: null); // mb compare
+  // }
+
+  // .h#{$i} {
+  //   @include h($i, $color, $weight: 700); // mb compare
+  // }
+  // .font_type_#{$i} {
+  //   @include h($i, get-var(color, black)); // mb compare
+  // }
+}
+
+// @for $i from 1 through 9 {
+//   .font_weight_#{$i} {
+//     font-weight: #{$i}00;
+//   }
+// }
