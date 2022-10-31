@@ -9,12 +9,6 @@
 </template>
 
 <script>
-import VSlick from 'vue-slick';
-import BaseIcon from './BaseIcon.vue';
-import BaseField from './BaseField.vue';
-import BaseButton from './BaseButton.vue';
-import BaseContainer from './BaseContainer.vue';
-//import BaseContainer from './BaseContainer.vue';
 export default {
   name: 'SliderCategoriesItem',
   props: {
@@ -31,12 +25,6 @@ export default {
       required: true,
     }
   },
-  components: {
-    BaseIcon,
-    BaseField,
-    BaseButton,
-    BaseContainer
-  }
 }
 </script>
 

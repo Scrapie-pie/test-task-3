@@ -53,7 +53,6 @@ export default {
   padding-left: 25px;
   cursor: pointer;
   user-select: none;
-
   input {
     position: absolute;
     opacity: 0;
@@ -61,7 +60,6 @@ export default {
     height: 0;
     width: 0;
   }
-
   &__checkmark {
     position: absolute;
     top: 0;
@@ -72,16 +70,13 @@ export default {
     background-color: white;
     border: 1px solid #ccc;
   }
-
   &:hover input ~ &__checkmark {
     border-color: black;
   }
-
   input:checked ~ &__checkmark {
     background-color: #0075FF;
     border-color: #0075FF;
   }
-
   &__checkmark:after {
     content: "";
     position: absolute;
@@ -94,7 +89,6 @@ export default {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
-
   input:checked ~ &__checkmark:after {
     display: block;
   }

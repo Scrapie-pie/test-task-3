@@ -15,12 +15,10 @@
 </template>
 
 <script>
-//import BaseLink from './BaseLink.vue';
 import ElementAmount from './ElementAmount.vue';
 export default {
   name: 'BlockAsideCategories',
   components: {
-    //BaseLink,
     ElementAmount
   }
 }

@@ -7,7 +7,6 @@
       <div class="field-action">
         <BaseIcon v-if="icon" :icon="icon" class="field-icon" />
         <div class="field-fit" @click.self="actionClicked">
-
           <div class="field-input">
             <BaseTextarea
               v-if="type === 'textarea' && !isEditableBlock"
@@ -23,7 +22,6 @@
               :placeholder="!isCustomPlaceholder ? placeholder : ''"
             />
             <VInputLike v-if="isEditableBlock" v-bind="$attrs" ref="inputz" v-on="listeners"></VInputLike>
-
             <slot name="inlineAfter"></slot>
           </div>
           <span
@@ -124,8 +122,6 @@ export default {
 </script>
 
 <style lang="scss">
-//background: #CCCCCC;
-
 .field {
   $self: &;
   width: 100%;
@@ -162,7 +158,6 @@ export default {
     height: 100%;
     display: flex;
     align-items: center;
-    //justify-content: space-between;
     cursor: text;
     margin-left: 12px;
     &::before {

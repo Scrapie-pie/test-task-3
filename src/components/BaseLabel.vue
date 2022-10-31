@@ -33,8 +33,5 @@ export default {
       display: flex;
     }
   }
-  // @media (min-width: get-var(breakpoint, xl) + 1px) {
-  //   align-items: flex-end;
-  // }
 }
 </style>
