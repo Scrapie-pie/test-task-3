@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     onInput(e) {
-      this.$emit('input', e.target.value);
+      this.$emit('input', this.$el.innerHTML);
     },
     onKeypress(e) {
       if (e.which === 13) {
@@ -40,17 +40,19 @@ export default {
     },
   },
   mounted() {
-    let vm = this;
     this.startValue = this.value;
-    this.$el.addEventListener('input', (e) => {
-      vm.$emit('input', vm.$el.innerHTML);
-    });
+    this.$el.addEventListener('input', this.onInput);
   },
+  beforeDestroy() {
+    this.$el.removeEventListener('input', this.onInput);
+  }
 }
 </script>
 
 <style lang="scss">
 .v-input-like {
-  //outline: none;
+  white-space: nowrap;
+  max-width: 840px;
+  overflow: hidden;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <a href="#" class="slider-categories-item">
-    <img :src="image" class="image">
-    <div class="content">
-      <div class="name">{{name}}</div>
-      <div class="amount">{{amount}}</div>
+    <img :src="image" class="slider-categories-item__image">
+    <div class="slider-categories-item__content">
+      <div class="slider-categories-item__name">{{name}}</div>
+      <div class="slider-categories-item__amount">{{amount}}</div>
     </div>
   </a>
 </template>
@@ -40,26 +40,23 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .slider-categories-item {
   display: flex !important;
   align-items: center;
   gap: 10px;
-
-
-  .image {
+  &__image {
     @include create-figure(60px, $color: #C4C4C4, $radius: 3px);
   }
-  .content {
+  &__content {
     display: flex !important;
     flex-direction: column;
-    // align-items: center;
     gap: 10px;
   }
-  .name {
+  &__name {
     font-size: 14px;
   }
-  .amount {
+  &__amount {
     font-size: 12px;
   }
 }

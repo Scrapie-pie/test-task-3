@@ -21,14 +21,11 @@ export default {
 
 <style lang="scss">
 .label {
-  @include flex-it(column, 5px);
-  display: inline-flex; // add to flex-it
-  //align-items: center;
-
+  @include flex-it(column, 5px, true);
+  display: inline-flex;
   &-name {
     @include h(5, $weight: 500);
   }
-
   &-content {
     @include flex-it(row, 10px);
     align-items: center;
@@ -36,7 +33,6 @@ export default {
       display: flex;
     }
   }
-
   // @media (min-width: get-var(breakpoint, xl) + 1px) {
   //   align-items: flex-end;
   // }

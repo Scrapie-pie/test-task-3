@@ -260,8 +260,14 @@
   flex-direction: $axis;
 
   @if $gap {
+    // @if type-of($gap) == 'list' {
+    //   @include to-responsive(grid-gap, $gap...)
+    // } @else {
+    //   grid-gap: $gap;
+    // }
+
     @if type-of($gap) == 'list' {
-      @include to-responsive(grid-gap, $gap...)
+      grid-gap: $gap;
     } @else {
       grid-gap: $gap;
     }

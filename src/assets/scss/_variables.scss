@@ -15,7 +15,7 @@ $variables: (
     h5: relative-unit(20px),
     h6: relative-unit(18px),
     h1_mobile: relative-unit(40px),
-    h2_mobile: relative-unit(22px),
+    h2_mobile: relative-unit(16px),
     h3_mobile: relative-unit(22px),
     h4_mobile: relative-unit(22px),
     h5_mobile: relative-unit(16px),
@@ -43,11 +43,9 @@ $variables: (
     xs:  320px,
   	sm:  576px,
   	md:  768px,
-    // 500
-    // 600
   	lg:  992px,
-  	xl:  1200px,
-  	xxl: 1400px,
+  	xl:  1024px,
+  	xxl: 1200px,
   ),
   color: (
     black: #000,

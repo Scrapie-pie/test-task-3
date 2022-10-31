@@ -1,25 +1,25 @@
 <template>
-  <div class="block">
-    <VTemplateFilter name="Бренды" :hasReset="true" @reset="onReset">
-      <form class="form">
-        <VCheckbox value="foo" v-model="checkedBrands">
-          <span>Бренд<AmountInline value="xxx" /></span>
-        </VCheckbox>
-        <VCheckbox value="bar" v-model="checkedBrands">
-          <span>Бренд<AmountInline value="x" /></span>
-        </VCheckbox>
-        <VCheckbox value="baz" v-model="checkedBrands">
-          <span>Бренд<AmountInline value="x xxx" /></span>
-        </VCheckbox>
+  <div class="block-filter-brand">
+    <TemplateFilter name="Бренды" :hasReset="true" @reset="onReset">
+      <form class="block-filter-brand__form">
+        <BaseCheckbox value="foo" v-model="checkedBrands">
+          <span>Бренд<ElementAmount value="xxx" /></span>
+        </BaseCheckbox>
+        <BaseCheckbox value="bar" v-model="checkedBrands">
+          <span>Бренд<ElementAmount value="x" /></span>
+        </BaseCheckbox>
+        <BaseCheckbox value="baz" v-model="checkedBrands">
+          <span>Бренд<ElementAmount value="x xxx" /></span>
+        </BaseCheckbox>
       </form>
-    </VTemplateFilter>
+    </TemplateFilter>
   </div>
 </template>
 
 <script>
-import AmountInline from './AmountInline.vue';
-import VCheckbox from './VCheckbox.vue';
-import VTemplateFilter from './VTemplateFilter.vue';
+import ElementAmount from './ElementAmount.vue';
+import BaseCheckbox from './BaseCheckbox.vue';
+import TemplateFilter from './TemplateFilter.vue';
 export default {
   name: 'BlockFilterBrand',
   data() {
@@ -33,16 +33,16 @@ export default {
     }
   },
   components: {
-    AmountInline,
-    VCheckbox,
-    VTemplateFilter
+    ElementAmount,
+    BaseCheckbox,
+    TemplateFilter
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.block {
-  .form {
+<style lang="scss">
+.block-filter-brand {
+  &__form {
     @include flex-it(column, 15px);
   }
 }

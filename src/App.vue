@@ -1,44 +1,34 @@
 <template>
   <div id="app">
-    <VHeader />
+    <BlockHeader />
     <FieldSearch />
-    <SearchWhat />
+    <BlockSearchedPrompt />
     <SliderCategories />
-    <VProducts></VProducts>
+    <BlockContentGrid />
   </div>
 </template>
 
 <script>
-import VHeader from './components/VHeader.vue';
-import TheFooter from './components/TheFooter.vue';
+import BlockHeader from './components/BlockHeader.vue';
 import FieldSearch from './components/FieldSearch.vue';
-//import VProducts from './components/VProducts.vue';
 import SliderCategories from './components/SliderCategories.vue';
-import SearchWhat from './components/SearchWhat.vue';
-import VProducts from './components/VProducts.vue';
-
+import BlockSearchedPrompt from './components/BlockSearchedPrompt.vue';
+import BlockContentGrid from './components/BlockContentGrid.vue';
 export default {
   name: 'App',
-  data() {
-    
-  },
   components: {
-    VHeader,
-    TheFooter,
+    BlockHeader,
     FieldSearch,
-    VProducts,
+    BlockContentGrid,
     SliderCategories,
-    SearchWhat,
+    BlockSearchedPrompt,
   }
 }
 </script>
 
 <style lang="scss">
 @import './assets/scss/style';
-
 #app {
-
   overflow: hidden;
-
 }
 </style>

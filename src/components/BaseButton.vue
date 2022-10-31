@@ -27,10 +27,6 @@ export default {
       type: Boolean,
       default: false
     },
-    // tag: {
-    //   type: String,
-    //   required: false,
-    // }
   },
   computed: {
     classMod() {
@@ -57,9 +53,7 @@ export default {
 <style lang="scss">
 .button {
   $self: &;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-centralize;
   cursor: pointer;
   border: none;
   position: relative;
@@ -67,16 +61,25 @@ export default {
   padding: 12px 15px;
   border-radius: 3px;
   font-weight: 700;
+  transition: .25s ease-out;
   &-text {
     position: relative;
     z-index: 2;
   }
   &--primary {
-    background-color: #F1BD45;
+    $bg: get-var(color, primary);
+    background-color: $bg;
+    &:hover {
+      background-color: darken($bg, 10%);
+    }
   }
-  &--secondary{
-    border: 1px solid #DEDEDE;
-    background-color: white;
+  &--secondary {
+    $bg: get-var(color, white);
+    border: 1px solid get-var(color, border);
+    background-color: $bg;
+    &:hover {
+      background-color: darken($bg, 5%);
+    }
   }
 }
 </style>

@@ -1,11 +1,9 @@
 <template>
-  <!-- <BaseLabel :name="label"> -->
-    <textarea
-      class="textarea"
-      @input="$emit('input', $event.target.value)"
-      v-bind="$attrs"
-    />
-  <!-- </BaseLabel> -->
+  <textarea
+    class="textarea"
+    @input="$emit('input', $event.target.value)"
+    v-bind="$attrs"
+  />
 </template>
 
 <script>
@@ -27,6 +25,5 @@ export default {
   resize: none;
   border: none;
   outline: none;
-  //
 }
 </style>

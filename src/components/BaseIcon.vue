@@ -38,12 +38,6 @@ function toComponentName(name) {
 <style lang="scss">
 .icon {
   vertical-align: middle;
-  //color: #000000;
-  //font-size: 22px; // icon_name
-  //max-width: 1em;
-  //min-width: 1em;
-  //width: 100%;
-
 }
 
 </style>

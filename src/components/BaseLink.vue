@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" :href="href" class="v-link">
+  <component :is="tag" :href="href" class="base-link">
     <slot></slot>
     <BaseIcon v-if="icon" :icon="icon"/>
   </component>
@@ -20,8 +20,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .v-link {
+<style lang="scss">
+  .base-link {
     @include flex-it(row, 15px, true);
     align-items: center;
     color: get-var(color, link);

@@ -1,7 +1,7 @@
 <template>
   <BaseLabel :name="label">
     <select
-      class="select"
+      class="base-select"
       @change="$emit('change', $event.target.value)"
     >
       <option v-for="option in options" v-bind:value="option.value">
@@ -35,11 +35,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/common";
-.select {
-  // $self: &;
-  // &#{$self}--primary {
-  //   @extend .common-input-padding-1;
-  // }
+.base-select {
   @extend .common-input;
   padding: 6px 10px;
 }
