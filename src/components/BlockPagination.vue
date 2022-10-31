@@ -1,12 +1,15 @@
 <template>
   <div class="block-pagination">
     <div class="block-pagination__list">
-      <div class="block-pagination__item">2</div>
-      <div class="block-pagination__item block-pagination__item--active">3</div>
+      <a href="#" class="block-pagination__item">2</a>
+      <a href="#" class="block-pagination__item block-pagination__item--active">3</a>
       <div class="block-pagination__dots">...</div>
-      <div class="block-pagination__item">13</div>
+      <a href="#" class="block-pagination__item">13</a>
     </div>
-    <BaseIcon icon="arrow-pagination" />
+    <a href="#">
+      <BaseIcon icon="arrow-pagination" />
+    </a>
+
   </div>
 </template>
 
@@ -32,8 +35,12 @@ export default {
   }
 
   &__item {
+    transition: .25s ease-out;
     &:not(&--active) {
       opacity: 0.5;
+    }
+    &:hover {
+      opacity: 1;
     }
   }
   &__dots {
