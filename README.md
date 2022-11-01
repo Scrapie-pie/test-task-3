@@ -1,4 +1,4 @@
-# test-task-calendar
+# test-task
 
 ## Project setup
 ```
