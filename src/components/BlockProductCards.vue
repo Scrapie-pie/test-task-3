@@ -1,7 +1,8 @@
 <template>
   <div class="block-product-cards">
     <BlockProductCard
-      v-for="item of 9"
+      v-for="(item, i) of 9"
+      :key="i"
       image="https://i.pinimg.com/736x/f4/d2/96/f4d2961b652880be432fb9580891ed62.jpg"
       name="Наименование товара, которое не более 2 строк"
       price="ХХ ХХХ"

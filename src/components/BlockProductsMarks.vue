@@ -1,6 +1,6 @@
 <template>
   <div class="block-products-marks">
-    <ElementMark v-for="item of 4"/>
+    <ElementMark v-for="(item, i) of 4" :key="i"/>
   </div>
 </template>
 
