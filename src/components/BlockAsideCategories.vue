@@ -4,7 +4,7 @@
       Все категории
     </div>
     <ul class="block-aside-categories__list">
-      <li class="block-aside-categories__item" v-for="item of 8">
+      <li class="block-aside-categories__item" v-for="(item, i) of 8" :key="i">
         Категория в которой нашли что-то <ElementAmount />
       </li>
     </ul>
@@ -30,12 +30,10 @@ export default {
   &__list {
     @include flex-it(column, 14px);
   }
-  &__item {
+  &__item, &__more {
     color: get-var(color, link);
   }
-  &__more {
-    color: get-var(color, link);
-  }
+
 
   @include media($max: md) {
     &__list {

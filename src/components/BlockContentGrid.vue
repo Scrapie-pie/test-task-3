@@ -28,7 +28,7 @@ export default {
   &__wrapper {
     display: grid;
     grid-template-columns: 3fr 9fr;
-    gap: 40px;
+    gap: get-var(space, xs);
   }
   @include media($max: md) {
     &__wrapper {

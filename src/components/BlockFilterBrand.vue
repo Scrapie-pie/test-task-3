@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .block-filter-brand {
   &__form {
-    @include flex-it(column, 15px);
+    @include flex-it(column, get-var(space, micro-md));
   }
 }
 </style>

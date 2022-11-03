@@ -5,21 +5,21 @@
         <div class="block-filter-price__inputs">
           <span class="block-filter-price__caption">от</span>
           <BaseInput
-            :value="value[0]"
             mod="primary"
+            :value="values[0]"
             @input="(val) => onMask(val, 0)"
-            @keypress="numbersOnly"
+            @keypress="numbersHandler"
           />
           <span class="block-filter-price__caption">до</span>
           <BaseInput
-            v-model="value[1]"
             mod="primary"
+            v-model="values[1]"
             @input="(val) => onMask(val, 1)"
-            @keypress="numbersOnly"
+            @keypress="numbersHandler"
           />
           <span class="block-filter-price__caption">Р</span>
         </div>
-        <BaseRange v-model="valueRange"></BaseRange>
+        <BaseRange v-model="valuesRange"></BaseRange>
       </form>
     </TemplateFilter>
   </div>
@@ -33,39 +33,35 @@ export default {
   name: 'BlockFilterPrice',
   data() {
     return {
-      value: [],
-      valueRange: ["1000", "1000000"],
+      values: [],
+      valuesRange: ["1000", "1000000"],
     };
   },
   mounted() {
-    this.value.push(this.setMask(this.valueRange[0]));
-    this.value.push(this.setMask(this.valueRange[1]));
+    this.values = this.valuesRange.map(this.setMask);
   },
   methods: {
-    clearMask(value) {
-      return parseInt(value.replaceAll(" ", ""));
-    },
     onMask(value, index) {
-      this.$set(this.value, index, this.setMask(this.clearMask(value)));
-      this.$set(this.valueRange, index, this.clearMask(value));
+      this.$set(this.values, index, this.setMask(value));
+      this.$set(this.valuesRange, index, this.clearMask(value));
     },
     setMask(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     },
-    numbersOnly(evt) {
-      evt = evt || window.event;
-      const charCode = evt.which ? evt.which : evt.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 46) {
-        evt.preventDefault();
-      } else {
-        return true;
+    clearMask(value) {
+      return parseInt(value.replaceAll(" ", ""));
+    },
+    numbersHandler(event) {
+      if (!/\d/.test(event.key)) {
+        event.preventDefault()
       }
     },
   },
   watch: {
-    valueRange(value) {
-      this.$set(this.value, 0, this.setMask(value[0]));
-      this.$set(this.value, 1, this.setMask(value[1]));
+    valuesRange(values) {
+      values.forEach((num, i) => {
+        this.$set(this.values, i, this.setMask(values[i]));
+      });
     },
   },
   components: {
@@ -80,7 +76,7 @@ export default {
 <style lang="scss">
 .block-filter-price {
   &__inputs {
-    @include flex-it(row, 10px);
+    @include flex-it(row, get-var(space, micro-sm));
     align-items: center;
     margin: 16px 0 14px;
 

@@ -1,5 +1,10 @@
 <template>
-  <VueSlider class="base-range" v-bind="settings" :value="value" @change="change" />
+  <VueSlider
+    class="base-range"
+    v-bind="settings"
+    :value="value"
+    @change="value => $emit('input', value)"
+  />
 </template>
 
 <script>
@@ -24,11 +29,6 @@ export default {
       }
     }
   },
-  methods: {
-    change(e) {
-      this.$emit('input', e)
-    },
-  },
   components: {
     VueSlider,
   },
@@ -39,13 +39,13 @@ export default {
 .base-range {
   .vue-slider-rail {
     height: 4px;
-    background-color: black;
+    background-color: get-var(color, black);
   }
   .vue-slider-process {
-    background-color: black;
+    background-color: get-var(color, black);
   }
   .vue-slider-dot-handle {
-    border: 2px solid black;
+    border: 2px solid get-var(color, black);
     box-shadow: none;
   }
 }

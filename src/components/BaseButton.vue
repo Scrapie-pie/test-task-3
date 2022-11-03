@@ -75,8 +75,8 @@ export default {
   }
   &--secondary {
     $bg: get-var(color, white);
-    border: 1px solid get-var(color, border);
     background-color: $bg;
+    border: 1px solid get-var(color, border);
     &:hover {
       background-color: darken($bg, 5%);
     }
